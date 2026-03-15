@@ -69,19 +69,19 @@ statsObserver.observe(document.querySelector('.stats-row'));
 // { img: 'caminho/para/imagem.jpg', title: 'NOME' }
 // e ajuste makeCover() para usar <img> em vez do SVG.
 const COVERS = [
-  { bg: ['#0d0520','#4a1080'], accent: '#9b4dca', title: 'VOID',  artist: 'Artista 1', spotify: '...' },
-  { bg: ['#0a1628', '#0f3460'], accent: '#4a9eff', title: 'DRIFT',  artist: 'Artista 1', spotify: '...'  },
-  { bg: ['#1a0505', '#6b1515'], accent: '#ff4444', title: 'EMBER',  artist: 'Artista 1', spotify: '...'  },
-  { bg: ['#051a0d', '#0f4a25'], accent: '#22cc66', title: 'BLOOM',  artist: 'Artista 1', spotify: '...'  },
-  { bg: ['#1a1505', '#6b5a10'], accent: '#ffcc00', title: 'HAZE',  artist: 'Artista 1', spotify: '...'   },
-  { bg: ['#0d1a1a', '#0f4a4a'], accent: '#00cccc', title: 'TIDE',  artist: 'Artista 1', spotify: '...'   },
-  { bg: ['#1a0510', '#6b1540'], accent: '#ff4499', title: 'PULSE',  artist: 'Artista 1', spotify: '...'  },
-  { bg: ['#0a0a1a', '#1a1a5a'], accent: '#6666ff', title: 'DEEP',  artist: 'Artista 1', spotify: '...'   },
-  { bg: ['#0d1505', '#2a4a10'], accent: '#88cc22', title: 'RAW',  artist: 'Artista 1', spotify: '...'    },
-  { bg: ['#1a0d05', '#6b3010'], accent: '#ff8833', title: 'BURN',  artist: 'Artista 1', spotify: '...'   },
+  { img:'Arts/MONTAGEM LADRAO.png', title: 'MONTAGEM LADRAO',  artist: 'ATLXS, MXZI', spotify: 'https://open.spotify.com/track/48WnIIBbnttcwUQ77MBoMI' },
+  { img:'Arts/MONTAGEM XONADA.png', title: 'MONTAGEM XONADA',  artist: 'MXZI, Dj Samir, DJ Javi26', spotify: 'https://open.spotify.com/track/2Gs0iF27my40p0dANv2rAg'  },
+  { img:'Arts/MONTAGEM SUPERSONIC.png', title: 'MONTAGEM SUPERSONIC',  artist: 'KHAOS, Jmilton', spotify: 'https://open.spotify.com/track/2r2vr5ujMEZN9hJzwwc6Jk' },
+  { img:'Arts/NO BATIDAO.png', title: 'NO BATIDAO',  artist: 'ZXKAI, slxughter', spotify: 'https://open.spotify.com/track/7vg9noSnFEyPfwLiaCW4vi' },
+  { img:'Arts/CLIMA LINDO3.png', title: 'CLIMA LINDO',  artist: 'GXMZ, Repsaj', spotify: 'https://open.spotify.com/track/3DXxNFEYRt2Fro0mHBa4Qd' },
+  { img:'Arts/RITMO DE VERÃO.png', title: 'RITMO DE VERAO',  artist: 'GXMZ, SEKIMANE, Repsaj', spotify: 'https://open.spotify.com/track/4zyt3pQgPQGmpPgf9mifqk' },
+  { img:'Arts/DIRTY SHOES FUNK.png', title: 'DIRTY SHOES FUNK',  artist: 'DJ Javi26, ovg!, SASORIIXPP', spotify: 'https://open.spotify.com/track/070T0rKUug5m8pjamiBCdE' },
+  { img:'Arts/MONTAGEM BANDIDO.png', title: 'MONTAGEM BANDIDO',  artist: 'Jmilton, Itamar MC', spotify: 'https://open.spotify.com/track/5s9JKS0P0exKgwLe4yCjAK' },
+  { img:'Arts/REINADO (rubix x tas).png', title: 'REINADO',  artist: 'Jmilton, CHASHKAKEFIRA', spotify: 'https://open.spotify.com/track/12GD6hVuuDyfSOqUMwX6ph' },
+  { img:'Arts/nakama art PSD.png', title: 'DIA DELICIA',  artist: 'Nakama, ΣP', spotify: 'https://open.spotify.com/track/094IjHeVUviN4aBnSXYsuj' },
 ];
 
-// Extrai o SVG para reusar no modal
+// svg extract
 function makeCoverSVG(c, i) {
   return `<img src="${c.img}" alt="${c.title}" style="width:100%;height:100%;object-fit:cover;display:block;">`;
 }
@@ -95,7 +95,7 @@ function makeCover(c, i) {
     <div class="cover-overlay"></div>
   `;
 
-  // Abre modal ao clicar — só nas 10 originais (não duplicatas)
+  // modal thing open
   item.addEventListener('click', () => openModal(c, rank));
 
   addHoverListeners(item);
@@ -104,7 +104,7 @@ function makeCover(c, i) {
 
 const track = document.getElementById('carousel');
 
-// Duplica para loop infinito contínuo
+// loops
 [...COVERS, ...COVERS].forEach((c, i) => {
   track.appendChild(makeCover(c, i));
 });
@@ -138,7 +138,7 @@ function openModal(c, rank) {
   document.getElementById('modal-artist').textContent = c.artist;
   document.getElementById('modal-spotify').href = c.spotify;
 
-  // reutiliza o SVG do cover
+  // forgor what this do
   const coverEl = document.getElementById('modal-cover');
   coverEl.innerHTML = makeCoverSVG(c, rank - 1);
 
