@@ -121,7 +121,7 @@ overlay.innerHTML = `
       <div class="modal-title" id="modal-title"></div>
       <div class="modal-artist" id="modal-artist"></div>
       <a href="#" target="_blank" class="modal-spotify" id="modal-spotify">
-        ▶ Ouvir no Spotify
+        ▶ Listen on Spotify!
       </a>
     </div>
   </div>
@@ -133,7 +133,7 @@ overlay.addEventListener('click', e => { if (e.target === overlay) closeModal();
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
 function openModal(c, rank) {
-  document.getElementById('modal-rank').textContent = `#${rank} — top 10`;
+  document.getElementById('modal-rank').textContent = `#${rank} — Hall of fame`;
   document.getElementById('modal-title').textContent = c.title;
   document.getElementById('modal-artist').textContent = c.artist;
   document.getElementById('modal-spotify').href = c.spotify;
