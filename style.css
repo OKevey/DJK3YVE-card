@@ -604,4 +604,33 @@ footer span {
   font-family: 'Black Han Sans', sans-serif;
 }
 
+@media (max-width: 600px) {
+  .modal {
+    flex-direction: column;
+    padding: 24px;
+    gap: 16px;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .modal-cover {
+    width: 100%;
+    height: 200px;
+  }
+
+  .modal-overlay {
+    align-items: flex-end;
+  }
+
+  .modal {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 0;
+    clip-path: polygon(
+      0% 2%, 1% 0%, 99% 0%, 100% 1%,
+      100% 100%, 100% 100%, 0% 100%, 0% 100%
+    );
+  }
+}
+
 .modal-close:hover { color: var(--y); }
