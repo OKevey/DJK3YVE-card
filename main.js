@@ -32,7 +32,9 @@ function countUp(el, target, duration = 1800) {
     const p    = Math.min((now - start) / duration, 1);
     const ease = 1 - Math.pow(1 - p, 3);
     const val  = Math.round(ease * target);
-    if (target >= 1000000) {
+    if (target >= 1000000000) {
+      el.textContent = (val / 1000000000).toFixed(1) + 'B';
+    } else if (target >= 1000000) {
       el.textContent = (val / 1000000).toFixed(1) + 'M';
     } else if (target >= 1000) {
       el.textContent = (val / 1000).toFixed(0) + 'K';
@@ -46,9 +48,8 @@ function countUp(el, target, duration = 1800) {
 
 // ── Placeholder data — troque pelos valores reais ──
 const DATA = {
-  covers:  47,
-  streams: 2400000,
-  artists: 23,
+  covers:  342,
+  streams: 1500000000,
 };
 
 const statsObserver = new IntersectionObserver(entries => {
@@ -56,7 +57,6 @@ const statsObserver = new IntersectionObserver(entries => {
     if (entry.isIntersecting) {
       setTimeout(() => countUp(document.getElementById('stat-covers'),  DATA.covers,  1400), 0);
       setTimeout(() => countUp(document.getElementById('stat-streams'), DATA.streams, 1800), 100);
-      setTimeout(() => countUp(document.getElementById('stat-artists'), DATA.artists, 1200), 200);
       statsObserver.disconnect();
     }
   });
