@@ -366,6 +366,13 @@ main {
   clip-path: polygon(0% 15%, 8% 0%, 92% 0%, 100% 12%, 100% 85%, 92% 100%, 8% 100%, 0% 88%);
 }
 
+.link-icon img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+
 .link-info { flex: 1; position: relative; z-index: 1; }
 .link-name { font-weight: 500; font-size: 14px; }
 .link-handle {
@@ -383,6 +390,8 @@ main {
   position: relative;
   z-index: 1;
 }
+
+
 .link-row:hover .link-arr { transform: translate(3px,-3px); color: var(--y); }
 
 /* ── Divider ── */
