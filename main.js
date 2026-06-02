@@ -48,7 +48,7 @@ function countUp(el, target, duration = 1800) {
 
 // ── Placeholder data — troque pelos valores reais ──
 const DATA = {
-  covers:  342,
+  covers:  384,
   streams: 1500000000,
 };
 
