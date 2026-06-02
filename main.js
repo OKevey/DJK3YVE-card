@@ -79,6 +79,7 @@ const COVERS = [
   { img:'Arts/MONTAGEM BANDIDO.png', title: 'MONTAGEM BANDIDO',  artist: 'Jmilton, Itamar MC', spotify: 'https://open.spotify.com/track/5s9JKS0P0exKgwLe4yCjAK' },
   { img:'Arts/REINADO (rubix x tas).png', title: 'REINADO',  artist: 'Jmilton, CHASHKAKEFIRA', spotify: 'https://open.spotify.com/track/12GD6hVuuDyfSOqUMwX6ph' },
   { img:'Arts/nakama art PSD.png', title: 'DIA DELICIA',  artist: 'Nakama, ΣP', spotify: 'https://open.spotify.com/track/094IjHeVUviN4aBnSXYsuj' },
+  { img:'Arts/FUNK ABNORMAL.jpg', title: 'FUNK ABNORMAL',  artist: 'DJ V12, SXID', spotify: 'https://open.spotify.com/album/1L2kODY4rShKP0phbzgys3' },
 ];
 
 // svg extract
