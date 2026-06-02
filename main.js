@@ -88,7 +88,7 @@ function makeCoverSVG(c, i) {
 }
 
 function makeCover(c, i) {
-  const rank = (i % 10) + 1;
+  const rank = (i % 11) + 1;
   const item = document.createElement('div');
   item.className = 'cover-item';
   item.innerHTML = `
